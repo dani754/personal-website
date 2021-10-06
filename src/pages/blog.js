@@ -1,12 +1,12 @@
 import * as React from 'react';
 import Layout from '../componenets/layout';
 
-const HomePage = () => {
+const BlogPage = () => {
   return (
-    <Layout pageHeading="home page" >
+    <Layout pageHeading="blog page" >
       <p>children</p>
     </Layout>
   );
 }
 
-export default HomePage;
+export default BlogPage;

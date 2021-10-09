@@ -1,8 +1,10 @@
 module.exports = {
     siteMetadata: {
-        siteUrl: `https://www.yourdomain.tld`,
+      title: "Danielle Vaitsman",
+      siteUrl: `https://daniellevaitsman.gatsbyjs.io`,
     },
     plugins: [
-
-    ]
-}
+        "gatsby-plugin-image",
+        "gatsby-plugin-sharp",
+    ],
+  };

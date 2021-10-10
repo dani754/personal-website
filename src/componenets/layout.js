@@ -1,21 +1,34 @@
 import * as React from 'react';
-import {Link} from 'gatsby';
+import {
+    Link,
+    useStaticQuery,
+    graphql,
+    } from 'gatsby';
 import {
     container,
     heading,
     navLinks,
     navLinkItem,
-    navLinkText
-  } from './layout.module.css';
+    navLinkText,
+    } from './layout.module.css';
 
 const Layout = (props) => {
 
     const pageHeading = props.pageHeading
     const children = props.children
+    const data = useStaticQuery(graphql`
+        query {
+        site {
+            siteMetadata {
+            title
+            }
+        }
+        }
+    `)
 
     return (
         <div className={container} >
-            <title>Danielle Vaitsman | דניאל ויצמן</title>
+            <title>{data.site.siteMetadata.title}</title>
             <nav>
                 <ul className={navLinks} >
                     <li className={navLinkItem} >

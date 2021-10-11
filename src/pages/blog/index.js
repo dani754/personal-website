@@ -1,7 +1,6 @@
 import * as React from 'react';
-import Layout from '../componenets/layout';
-import { graphql } from 'gatsby';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
+import Layout from '../../components/layout';
+import { Link, graphql } from 'gatsby';
 
 
 const BlogPage = ({ data }) => {
@@ -11,11 +10,10 @@ const BlogPage = ({ data }) => {
           data.allMdx.nodes.map( post => {
             return (
               <article key={post.id} >
-                <h3>{post.frontmatter.title}</h3>
+                <h3>
+                  <Link to={`/blog/${post.slug}`} >{post.frontmatter.title}</Link>
+                </h3>
                 <p>{post.frontmatter.datePublished}</p>
-                <MDXRenderer>
-                  {post.body}
-                </MDXRenderer>
               </article>
             );
           })
@@ -34,7 +32,7 @@ export const posts = graphql`
           title
         }
         id
-        body
+        slug
       }
     }
   }

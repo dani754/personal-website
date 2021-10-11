@@ -4,13 +4,8 @@ import {
     useStaticQuery,
     graphql,
     } from 'gatsby';
-import {
-    container,
-    heading,
-    navLinks,
-    navLinkItem,
-    navLinkText,
-    } from './layout.module.css';
+import { Container , NavLink, Flex } from 'theme-ui';
+
 
 const Layout = (props) => {
 
@@ -27,27 +22,25 @@ const Layout = (props) => {
     `)
 
     return (
-        <div className={container} >
+        <Container>
             <title>{data.site.siteMetadata.title}</title>
-            <nav>
-                <ul className={navLinks} >
-                    <li className={navLinkItem} >
-                        <Link to="/"  className={navLinkText} >Home</Link></li>
-                    <li className={navLinkItem} >
-                        <Link to="/about" className={navLinkText} >About</Link></li>
-                    <li className={navLinkItem} >
-                        <Link to="/projects" className={navLinkText} >Projects</Link></li>
-                    <li className={navLinkItem} >
-                        <Link to="/blog" className={navLinkText} >Blog</Link></li>
-                    <li className={navLinkItem} >
-                        <Link to="/contact" className={navLinkText} >Contact</Link></li>
-                </ul>
-            </nav>
+            <Flex as="nav">
+                <NavLink as="a" href="/" >
+                    Home</NavLink >
+                <NavLink href="/about" p={2} >
+                    About</NavLink >
+                <NavLink href="/projects" p={2} >
+                    Projects</NavLink >
+                <NavLink href="/blog" p={2} >
+                    Blog</NavLink >
+                <NavLink href="/contact" p={2} >
+                    Contact</NavLink >
+            </Flex>
             <main>
-                <h1 className={heading} >{pageHeading}</h1>
+                <h1>{pageHeading}</h1>
                 {children}
             </main>
-        </div>
+        </Container >
     );
 }
 

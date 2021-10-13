@@ -1,11 +1,15 @@
-import { Flex } from "@theme-ui/components";
-
 export default {
+ sizes: {
+    body: {
+      width: '100%',
+      height: 'auto',
+    },
+  },
   colors: {
-    text: '#AE9152',
+    text: '#353745',
     background: '#BFD9D7',
     primary: '#AE9152',
-    secondary: '#000',
+    secondary: '#DDBB4D',
   },
   fonts: {
     body: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
@@ -20,17 +24,12 @@ export default {
     },
   },
   nav: {
-    px: '2em',
     textTransform: 'uppercase',
     letterSpacing: '0.2em',
     width: '100%',
-  },
-  a: {
-    padding: '2em',
-    fontSize: '2em',
-    color: 'secondary',
+    color: 'primary',
+    padding: '3em',
   },
   WebkitTextStroke: 'white',
-  WebkitTextStrokeWidth: '3px',
   WebkitTextFillColor: 'transparent',
 }

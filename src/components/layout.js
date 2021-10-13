@@ -20,24 +20,26 @@ const Layout = (props) => {
         }
         }
     `)
+    const sections = ["home", "about", "projects", "blog", "contact"];
 
     return (
-        <Container>
+        <Container as="body" >
             <title>{data.site.siteMetadata.title}</title>
             <Flex as="nav">
-                <NavLink as="a" href="/" >
-                    Home</NavLink >
-                <NavLink href="/about" p={2} >
-                    About</NavLink >
-                <NavLink href="/projects" p={2} >
-                    Projects</NavLink >
-                <NavLink href="/blog" p={2} >
-                    Blog</NavLink >
-                <NavLink href="/contact" p={2} >
-                    Contact</NavLink >
+                {
+                    sections.map( section => {
+                        let ref = '/' + section;
+                        if (section === "home"){
+                            ref = '/';
+                        }
+                        return (
+                            <NavLink as="a" href={ref} >{section}</NavLink >
+                        )
+                    })
+                }
             </Flex>
             <main>
-                <h1>{pageHeading}</h1>
+                <h1 >{pageHeading}</h1>
                 {children}
             </main>
         </Container >

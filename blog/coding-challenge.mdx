@@ -1,6 +1,9 @@
+import { postCount } as previous from './my-first-post.mdx';
+export const postCount = previous + 1;
+
 ---
 title: "100 days of coding challenge"
-postNumber: "2"
+postNumber: {postCount}
 datePublished: "2021-10-11"
 ---
 

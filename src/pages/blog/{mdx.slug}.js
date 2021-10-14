@@ -5,7 +5,8 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 const BlogPost = ({data}) => {
   return (
-    <Layout pageHeading={data.mdx.frontmatter.title}>
+    <Layout >
+    <h1>{data.mdx.frontmatter.title}</h1>
       <p>{data.mdx.frontmatter.datePublished}</p>
       <MDXRenderer>
         {data.mdx.body}

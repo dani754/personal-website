@@ -24,7 +24,10 @@ const BlogPage = ({ data }) => {
 
 export const posts = graphql`
   query {
-    allMdx(sort: {fields: frontmatter___postNumber, order: DESC}) {
+    allMdx(
+      filter: {fileAbsolutePath: {regex: "\\/blog/"}}
+      sort: {fields: frontmatter___postNumber, order: DESC}
+    ) {
       nodes {
         frontmatter {
           datePublished(formatString: "MMMM DD, YYYY")

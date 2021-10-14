@@ -1,15 +1,17 @@
 import * as React from 'react';
 import {
-    Link,
     useStaticQuery,
     graphql,
     } from 'gatsby';
-import { Container , NavLink, Flex } from 'theme-ui';
+import { 
+    Container,
+    NavLink,
+    Flex,
+    } from 'theme-ui';
 
 
 const Layout = (props) => {
 
-    const pageHeading = props.pageHeading
     const children = props.children
     const data = useStaticQuery(graphql`
         query {
@@ -23,9 +25,9 @@ const Layout = (props) => {
     const sections = ["home", "about", "projects", "blog", "contact"];
 
     return (
-        <Container as="body" >
+        <Container>
             <title>{data.site.siteMetadata.title}</title>
-            <Flex as="nav">
+            <Flex>
                 {
                     sections.map( section => {
                         let ref = '/' + section;
@@ -33,13 +35,12 @@ const Layout = (props) => {
                             ref = '/';
                         }
                         return (
-                            <NavLink as="a" href={ref} >{section}</NavLink >
+                            <NavLink href={ref} >{section}</NavLink >
                         )
                     })
                 }
             </Flex>
             <main>
-                <h1 >{pageHeading}</h1>
                 {children}
             </main>
         </Container >

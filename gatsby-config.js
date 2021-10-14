@@ -13,6 +13,13 @@ module.exports = {
           path: `${__dirname}/blog/`,
         },
       },
+      {
+        resolve: `gatsby-source-filesystem`,
+        options: {
+          name: `text`,
+          path: `${__dirname}/text/`,
+        },
+      },
       "gatsby-plugin-mdx",
       "gatsby-plugin-theme-ui",
     ],

@@ -3,3 +3,82 @@ title: "ThemeUI Gatsby plugin"
 postNumber: "5"
 datePublished: "2021-10-13"
 ---
+
+Gatsby is a React based framework that allows developers to quickly build static websites and apps.
+ThemeUI is a styling library that allows developers to configure designs for their components by giving them predefined values in a shared theme object.
+This concept is called a constraint based design principles - a template for configurable, reusable styles that will help to build a styling system for your project.
+You can install it as a plugin to your Gatsby project really quickly by following the instructions in the Gatsby docs.
+Theme object: a file with all the shared design specifications that will be applied in all the project pages. You can also use preset theme design.
+You can access the styles in your Theme object by using the sx props in components or by using the jsx pragma that replace a React.createElement with a custom createElement function that applies the Theme object style values:
+
+/** @jsx jsx */
+import {jsx} from 'theme-ui'
+export default props => (
+    <div 
+        {...props}
+        sx={{
+            //values referencing scales defined in a theme object
+            color: 'primary',
+            bg: 'lightgray',
+            fontFamily: 'body'.
+            //raw CSS values
+            boxShadow: ' 0 0 1px 3px rgba(0, 0, 0, .125)',
+        }}
+    />
+)
+
+example for basic level:
+
+Theme color object file:
+colors: {
+    text: "white",
+    background: "#fff",
+    primary: "rebeccapurple",
+    secondary: "coral",
+},
+
+sx props in components:
+<div sx={{ display: "flex" }}>
+    <Square sx={{ backgroundColor: "primary" }}>Primary</Square>
+    <Square sx={{ backgroundColor: "secondary" }}>Scondary</Square>
+</div>
+
+Variants: allows you to define variations of styles for common components like buttons.
+
+//example theme with Variants
+{
+    colors: {
+        primary: '#07c',
+        swcondary: '#639',
+    },
+    buttons: {
+        primary: {
+            color: 'white',
+            bg: 'primary',
+        },
+        secondary: {
+            color: 'white',
+            bg: 'secondary',
+        },
+    },
+}
+
+<button sx={{ variant: 'buttons.primary' }} />
+
+Breakpoints: media queries are defined by values given in an array.
+
+//example:
+{
+    breakpoints: [
+        '40em', '56em', '64em',
+    ],
+}
+
+Color modes: allows you to create different color modes such as dark mode.
+
+Summary: 
+[] Theme objects are where your style values for your entire application live.
+[] Custom tool that will build out your theme object for you to copy and paste.
+[] Remember to add and import your jsx pragma and use the sx prop to access your styles.
+[] Theme UI comes with tons of cool features such as variants, breakpoints, color modes, and more.
+

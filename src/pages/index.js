@@ -13,15 +13,15 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 const HomePage = ({data}) => {
   return (
-    <Layout >
+    <Layout page="home" >
       <Grid gap={2} columns={[2, '6fr 1fr']}>
         <Box  sx={{ flex: '1 1 auto' }} >
-          <MDXRenderer>
+          <MDXRenderer sx= {{ variant: 'text.caps' }} >
             {data.mdx.body}
           </MDXRenderer>
         </Box>
-        <Box sx={{ variant: 'box.primary' }} >
-          <StaticImage src="../images/profilePic.jpg" alt="profilePic" placeholder="blurred" sx={{ flex: '1 1 auto' }}  />
+        <Box >
+          <StaticImage src="../images/profilePic.jpg" alt="profilePic" placeholder="blurred" sx={{ borderRadius: '50%' }} />
         </Box>    
       </Grid>
       <Flex>projects sample</Flex>

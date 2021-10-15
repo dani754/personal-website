@@ -1,9 +1,11 @@
+/** @jsx jsx */
 import * as React from 'react';
 import {
     useStaticQuery,
     graphql,
     } from 'gatsby';
 import { 
+    jsx,
     Container,
     NavLink,
     Flex,
@@ -12,6 +14,7 @@ import {
 
 const Layout = (props) => {
 
+    const currentPage= props.page;
     const children = props.children
     const data = useStaticQuery(graphql`
         query {
@@ -34,9 +37,16 @@ const Layout = (props) => {
                         if (section === "home"){
                             ref = '/';
                         }
-                        return (
-                            <NavLink href={ref} >{section}</NavLink >
-                        )
+                        if (currentPage === section){
+                            return (
+                                <NavLink href={ref} sx={{ variant: 'links.current' }} >{section}</NavLink >
+                            )
+                        }
+                        else {
+                            return (
+                                <NavLink href={ref} sx={{ ':hover': {color: 'secondary', textUnderlineOffset: '1em'} }} >{section}</NavLink >
+                            )
+                        }
                     })
                 }
             </Flex>

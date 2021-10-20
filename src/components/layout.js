@@ -50,7 +50,7 @@ const Layout = (props) => {
                     })
                 }
             </Flex>
-            <main>
+            <main sx={{ alignItems: 'center' }} >
                 {children}
             </main>
         </Container >

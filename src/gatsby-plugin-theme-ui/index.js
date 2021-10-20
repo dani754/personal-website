@@ -22,4 +22,22 @@ export default {
       color: 'secondary',
     },
   },
+  cards: {
+    primary: {
+      padding: 2,
+      margin: '3em',
+      borderRadius: 10,
+      boxShadow: '0 0 8px rgba(0, 0, 0, 0.125)',
+      border: '1px solid',
+      borderColor: 'white',
+      alignItems: 'center',
+      textAlign: 'center',
+      h3: {
+        color: 'primary',
+      },
+      a: {
+        color: 'primary',
+      },
+    },
+  },
 }

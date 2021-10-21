@@ -32,12 +32,32 @@ export default {
       borderColor: 'white',
       alignItems: 'center',
       textAlign: 'center',
+      letterSpacing: '0.1em',
+      lineHeight: '1.8em',
+      fontSize: 16,
       h3: {
         color: 'primary',
+        textDecoration: 'underline',
+        letterSpacing: '0.1em',
+        fontWeight: 'bolder',
       },
       a: {
-        color: 'primary',
+        textDecoration: 'none',
+        color: 'white',
+        fontSize: 12,
       },
+    },
+  },
+  buttons: {
+    primary: {
+      padding: '0.4em',
+      margin: '1em',
+      color: 'background',
+      letterSpacing: '0.1em',
+      bg: 'primary',
+      '&:hover': {
+        bg: 'secondary',
+      }
     },
   },
 }

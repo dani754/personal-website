@@ -8,9 +8,8 @@ const ProjectFreelanceCard = (props) => {
         <text>
             Using Java, Spring, Hibernate, JDBC, PostgreSQL and JavaFX for building a Financial application for accounting and more. The project is still in progress.
         </text> <br/>
-        <a href='https://github.com/dani754/freelance'  >Go to GitHub full repo --> </a>
-        <span/>
-        <a href='/projects/freelance' >demo and screenshots --></a>
+        <Button><a href='https://github.com/dani754/freelance'  >GitHub repo</a></Button>
+        <Button><a href='/projects/freelance' >Demo & screenshots</a></Button>
     </Card>
   );
 }

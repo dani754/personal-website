@@ -1,3 +1,5 @@
+import limg from '../images/linkedin.jpg';
+
 export default {
   colors: {
     text: '#353745',
@@ -58,6 +60,12 @@ export default {
       '&:hover': {
         bg: 'secondary',
       }
+    },
+  },
+  images: {
+    logo: {
+      padding: '3em',
+      borderRadius: '50%',
     },
   },
 }
